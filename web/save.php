@@ -33,14 +33,15 @@ $imagePath = "/images/";
     
 
 
-session_start();
-$user =  $_SESSION['userId'];
+
+
 
 
 
 
 $sql = <<<SQL
-    INSERT INTO Post (post_name, post_user_id) VALUES ('$imagename', $user)
+    INSERT INTO Post (post_name, post_user_id, post_caption) VALUES ('$imagename', $user, '$caption')
+   
   
 SQL;
 echo $sql;
@@ -51,7 +52,8 @@ $conn->query($sql);
     
 if(move_uploaded_file($imagetemp, get_absolute_path('images/') . $conn->insert_id . '.png')) {
     //TODO - Use the proper file type when the image is put into the images folder
-    echo "Sussecfully uploaded your image.";
+    echo "Sussecfully uploaded your image."; 
+    
 }
 
     

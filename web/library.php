@@ -6,7 +6,8 @@
  * Common environment settings and functions used througout the Hanover DPW Park Permitting
  * application.
  *************************************************************************************************/
-
+session_start();
+$user =  $_SESSION['userId'];
 extract($_REQUEST);
 
 

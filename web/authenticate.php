@@ -6,15 +6,16 @@ $dbh = get_database_connection();
 
 
 
-
+$username = mysqli_real_escape_string($dbh, $username);
 $email = mysqli_real_escape_string($dbh, $email);
 $password = mysqli_real_escape_string($dbh, $password);
 
 $sql = <<<SQL
-SELECT user_email, user_password,user_id
+SELECT user_username, user_password,user_id
 FROM users
-WHERE user_email = '{$email}'
+WHERE user_username = '{$username}'
 AND user_password = '{$password}'
+AND user_email = '{$email}'
 SQL;
 
 $result = mysqli_query($dbh, $sql);

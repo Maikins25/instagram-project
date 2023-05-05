@@ -22,6 +22,11 @@ $dbh = get_database_connection();
   <label for="image">Select an image:</label>
   <input type="file" id="image" name="image">
 
+<br>
+
+ <label for="caption"> Type your caption</label>
+<input type="text" id="caption" name="caption"> 
+
  
 <?php
 
