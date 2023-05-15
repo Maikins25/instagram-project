@@ -31,8 +31,7 @@
 
 <a href='index.php?content=post' class='btn btn-primary' role='button'><i class='fa fa-plus-circle' aria-hidden='true'></i>&nbsp;Make A post</a>
 <?php
-session_start();
-$user =  $_SESSION['userId'];
+
 
 $sql = <<<SQL
     SELECT user_id

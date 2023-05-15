@@ -30,11 +30,12 @@
 
 
 $sql = <<<SQL
-SELECT user_username, user_id, follow_followed_user_id
+SELECT user_username, user_id, follow_id
 FROM users
-left outer join follow on follow_user_id = user_id
-where user_id = $user
-and user_id != follow_followed_user_id
+left outer join follow on follow_user_id = $user and follow_followed_user_id = user_id
+
+where user_id <> $user
+
 
 
 SQL;
@@ -47,8 +48,19 @@ $result = mysqli_query($conn, $sql);
 while ($row = $result->fetch_assoc())
 {
    
-       echo '<h5>' . $row['user_username'] . '<button id="follow' . $row['user_id'] . '" onclick="follow(' . $row['user_id'] . ')"> Follow</button>' . '</h5>' ;
+       echo '<h5><a href="index.php?content=Profile">';
+        echo $row['user_username'];
+        echo '</a><button id="follow' ;
+        echo  $row['user_id'] ;
+        echo '" onclick="follow(' . $row['user_id'] . ')"> ';
+        if(isset ($row['follow_id'])){
+            echo 'Following';
 
+        }else{
+            echo 'Follow';
+        }
+        echo '</button>' . '</h5>' ;
+       
    
     
 

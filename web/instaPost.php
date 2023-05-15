@@ -7,8 +7,7 @@
  * contained within index.php.
  *************************************************************************************************/
 
-session_start();
-$user =  $_SESSION['userId'];
+
 
 $dbh = get_database_connection();
 

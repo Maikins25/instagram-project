@@ -47,6 +47,9 @@ include('library.php');
                             <li class="nav-item">
                                 <a class="nav-link <?php print($content == 'following' ? 'active' : ''); ?>" href="index.php?content=following">Follow Your Friends</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link <?php print($content == 'register' ? 'active' : ''); ?>" href="index.php?content=register">Sign up</a>
+                            </li>
                         </ul>
                 </div>
             </nav>
