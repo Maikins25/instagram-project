@@ -35,8 +35,9 @@ include('library.php');
                 <a class="navbar-brand" href="index.php">Instagraham</a>
                 <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            
                             <li class="nav-item">
-                                <a class="nav-link <?php print($content == 'feed' ? 'active' : ''); ?>" href="index.php?content=feed">Feed</a>
+                                <a class="nav-link <?php print($content == 'register' ? 'active' : ''); ?>" href="index.php?content=register">Sign up</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link <?php print($content == 'login' ? 'active' : ''); ?>" href="index.php?content=login">Login</a>
@@ -47,10 +48,37 @@ include('library.php');
                             <li class="nav-item">
                                 <a class="nav-link <?php print($content == 'following' ? 'active' : ''); ?>" href="index.php?content=following">Follow Your Friends</a>
                             </li>
+
                             <li class="nav-item">
-                                <a class="nav-link <?php print($content == 'register' ? 'active' : ''); ?>" href="index.php?content=register">Sign up</a>
+                                <a class="nav-link <?php print($content == 'Settings' ? 'active' : ''); ?>" href="index.php?content=settings">Settings</a>
                             </li>
+
                         </ul>
+                        <?php
+
+                        $sql = <<<SQL
+                        select user_username
+                        from users
+                        where user_id = $user
+                        
+                        
+                        SQL;
+                        
+                        $conn = get_database_connection();
+                        
+                        $result = mysqli_query($conn, $sql);
+                        
+                        
+                        while ($row = $result->fetch_assoc())
+                        {
+                           
+                               echo 'Logged in as ' . $row['user_username'];
+                            
+                        
+                        }
+                        
+                        ?>
+                       
                 </div>
             </nav>
         </div>
@@ -59,9 +87,13 @@ include('library.php');
         
         <div >
            <?php 
-
            include(get_content() . '.php'); 
-
+           
+           
+        //    if($content == 'index'){
+        //        include('instaFeed.php');
+               
+        //    }
            ?>
        </div>
     </body>

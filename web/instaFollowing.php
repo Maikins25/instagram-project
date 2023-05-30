@@ -28,7 +28,6 @@
 <?php
 
 
-
 $sql = <<<SQL
 SELECT user_username, user_id, follow_id
 FROM users
@@ -48,7 +47,7 @@ $result = mysqli_query($conn, $sql);
 while ($row = $result->fetch_assoc())
 {
    
-       echo '<h5><a href="index.php?content=Profile">';
+       echo '<h5><a href="index.php?content=Profile&user_id=' . $row['user_id'] . '">';
         echo $row['user_username'];
         echo '</a><button id="follow' ;
         echo  $row['user_id'] ;

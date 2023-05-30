@@ -1,3 +1,9 @@
+<script>
+function profile(){
+   
+}
+</script> 
+
 <div class="text">
     <h2>Welcome to Instagraham</h2>
 </div>
@@ -49,7 +55,7 @@
                 <br>
                 <?php
 
-                echo '<input  type="submit" id="signupButton" class="btn btn-primary btn-block" value="Sign Up" />'
+                echo '<input  type="submit" id="signupButton" onclick="profile()" class="btn btn-primary btn-block" value="Sign Up" />'
 
                 ?>
             
@@ -62,6 +68,7 @@
             
 
         </form>
+        
       
     </div>
 

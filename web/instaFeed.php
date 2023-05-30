@@ -1,3 +1,12 @@
+<script>
+function crumble(postId){
+console.log('ran');
+let textArea = document.getElementById(postId);
+location.href = 'uploadCrumble.php?id=' + postId + '&crumble=' + textArea.value;
+
+}
+</script>
+
 
 <h1> Here is the instagraham feed </h1>
 
@@ -26,10 +35,10 @@ $result = mysqli_query($conn, $sql);
 
 
 $image_path = "images/";
-
+$i = 0;
 while ($row = $result->fetch_assoc())
 {
-    
+    $i = $i + 1;
     echo '<div class="post">';
 
     echo '<div class="center">';
@@ -39,9 +48,13 @@ while ($row = $result->fetch_assoc())
     echo '<h5>' . $row['post_caption'] . '</h5>';
     echo '<h5> Posted by @' . $row['user_username'] . '</h5>';
     echo '</div>';
-   
+    echo '<div class="center">';
+    echo '<button onclick="crumble(' . $row['post_id'] . ')">Leave a crumble</button>';
+    echo '<textArea id="'. $i .'"></textArea>';
+    echo '</div>';
+
     
 }
-    
+
 
 

@@ -20,7 +20,7 @@ function get_content()
 
     if (!isset($content))
     {
-        $content = 'list';
+        $content = 'feed';
     }
 
     $content = 'insta' . ucfirst(strtolower($content));
