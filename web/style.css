@@ -1,8 +1,16 @@
 .post{
         margin: auto;
         width: 50%;
+        border-color:goldenrod ;
+        border-style:dashed;
+        border-width: 2px;
+        margin-top:30px;
+        margin-bottom:30px;
         
         padding: 10px;
+        background-color: antiquewhite;
+        border-radius: 5px;
+        box-shadow: 0 0 15px goldenrod;
 
 }
 
@@ -20,4 +28,87 @@
 
 .commentText {
     display:none;
+}
+
+.image {
+    margin: auto;
+    width: 50%;
+    height:50%;
+    padding:20px;
+}
+.profilePic {
+    width:50px;
+    height:50px; 
+    border:black;
+    border-radius: 25px;
+} 
+.username {
+    margin-left: 5px;
+    margin-right:5px;
+}
+.page {
+background-color: bisque;
+}
+.logInButton{
+    color: black;
+    margin-left:5px;
+}
+.imageSelector{
+    margin-left: 70px;
+    text-align:center;
+    margin-top:10px;
+}
+.postCaption{
+    text-align:center;
+    margin-right: 50px;
+}
+.imageDiv{
+    border-style: dashed;
+    width:500px;
+    height:500px;
+    margin-left:450px;
+    border-radius: 25px;
+}
+.buttons{
+    margin-top:10px;
+    text-align:center;
+    margin-right:50px;
+}
+.profilePicture{
+margin-top:20px;
+text-align:center;
+margin-right:10px;
+
+}
+.profileBio{
+width:30%;
+margin-top:10px;
+text-align:center;
+border-style:solid;
+margin-left:500px;
+border-radius:25px;
+margin-bottom:30px;
+}
+.profilePictureImg{
+    border-style:solid;
+    border-radius:25px;
+}
+.following{
+    margin-left:535px;
+   margin-bottom:25px;
+    text-align:center;
+    border-style:dashed;
+    width:25%;
+    border-radius:25px;
+}
+.followedBy{
+    margin-left:535px;
+    border-style:dashed;
+    
+    text-align:center;
+    width:25%;
+    border-radius:25px;
+}
+.names{
+    text-align:center;
 }

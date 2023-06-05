@@ -61,4 +61,4 @@ if(move_uploaded_file($imagetemp, get_absolute_path('images/') . $conn->insert_i
 
 $conn->close();
 
-header('Location: index.php?content=list');
+header('Location: index.php?content=feed');

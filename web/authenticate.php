@@ -32,7 +32,7 @@ if ($count == 1)
 
     session_write_close();
 
-    header('Location: index.php?content=list');
+    header('Location: index.php?content=feed');
     
 }
 else

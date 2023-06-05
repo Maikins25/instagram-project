@@ -1,3 +1,10 @@
+<script>
+function signOut(){
+    
+    location.href = 'signOut.php?';
+}
+</script>
+
 <?php
 
 if(isset($user)){
@@ -37,7 +44,7 @@ if($row = $result->fetch_assoc()){
             echo '</form>';
 
         }else{
-            
+
             $image_path = "profilePics/";
 
 
@@ -119,7 +126,11 @@ while($row = $result->fetch_assoc()){
 
         }
     }
+    echo '<button onclick="signOut()">Sign Out</button>';
+}else{
+    echo '<h1>Log In or Sign Up to See Your Profile</h1>';
 }
+
 
 
 
