@@ -35,7 +35,7 @@ function profile(){
             </div>
             <div class="col-xs-12" style="height:20px;"></div>
             <div class="form-group">
-                <label class="col-sm-3 control-label" for="email">email</label>
+                <label class="col-sm-3 control-label" for="email">Email:</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" id="email" name="register_email" placeholder="Email" autofocus />
                 </div>
@@ -62,7 +62,7 @@ function profile(){
 
 
         
-               <h6> Already Have an account? <a class="btn btn-link" href="index.php?content=Login" role="button">Login</a> </h6>
+               <h6> Already have an account? <a class="btn btn-link" href="index.php?content=Login" role="button">Login</a> </h6>
             
 
             

@@ -65,9 +65,11 @@ background-color: bisque;
 .imageDiv{
     border-style: dashed;
     width:500px;
-    height:500px;
-    margin-left:450px;
-    border-radius: 25px;
+    min-height:200px;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius:25px;
 }
 .buttons{
     margin-top:10px;
@@ -110,5 +112,36 @@ margin-bottom:30px;
     border-radius:25px;
 }
 .names{
+    text-align:center;
+}
+.post-img{
+    border-radius:25px;
+    width:95%;
+    margin:10px;
+}
+.LogInButton{
+    color:black;
+    margin-right:10px;
+    margin-left:10px;
+}
+.yourProfile{
+    text-align: center;
+}
+.userProfilePic{
+    border-style: solid;
+    border-radius:25px;
+}
+.signOutProfile{
+    text-align:center;
+    margin-top:20px;
+}
+.createProfilePic{
+
+    margin-top:20px;
+    text-align:center;
+    margin-left:80px;
+    
+}
+.createProfileBio{
     text-align:center;
 }

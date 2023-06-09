@@ -32,7 +32,7 @@ $imagetemp = $_FILES['image']['tmp_name'];
 $imagePath = "/images/";
     
 
-
+echo '<h1>' . $imagename . '</h1>';
 
 
 

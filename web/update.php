@@ -39,3 +39,4 @@ mysqli_query($conn, $sql);
 
 
 $conn->close();
+header('Location: index.php?content=settings');

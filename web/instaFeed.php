@@ -1,9 +1,13 @@
 
 <script>
 function crumble(postId){
-console.log('ran');
-let textArea = document.getElementById(postId);
-location.href = 'uploadCrumble.php?id=' + postId + '&crumb=' + textArea.value;
+
+    console.log('ran');
+    let textArea = document.getElementById(postId);
+    if(textArea.value != ''){
+        location.href = 'uploadCrumble.php?id=' + postId + '&crumb=' + textArea.value;
+
+    }    
 
 }
 </script>

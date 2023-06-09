@@ -1,3 +1,12 @@
+<script>
+function loadFile(event) {
+    var preview = document.getElementById('preview');
+    preview.src = URL.createObjectURL(event.target.files[0]);
+    preview.onload = function() {
+      URL.revokeObjectURL(preview.src) // free memory
+    }
+  };
+</script>    
 <?php
 
 /*************************************************************************************************
@@ -18,11 +27,11 @@ $dbh = get_database_connection();
 
 <form action="save.php" method="POST" enctype='multipart/form-data'>
     <div class="imageDiv">
-    <img src="">
+    <img id="preview" class="post-img" />
 </div>
 <div class="imageSelector">
   <label for="image">Select an image:</label>
-  <input type="file" id="image" name="image">
+  <input type="file" placeholder="Upload Image" name="image" id="fileToUpload" onchange="loadFile(event)">
 </div>
 <br>
 
@@ -38,7 +47,7 @@ $dbh = get_database_connection();
 $dbh->close();
 
 ?>
-        </select>
+    </select>
     </div>
     <div class="buttons">
     <button type="submit" class="btn btn-primary">Save</button>

@@ -45,7 +45,7 @@
             </div>
             <div class="col-xs-12" style="height:20px;"></div>
             <div class="form-group">
-                <label class="col-sm-3 control-label" for="email">email</label>
+                <label class="col-sm-3 control-label" for="email">Email:</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" id="email" name="email" placeholder="Email" autofocus />
                 </div>
@@ -69,7 +69,7 @@
 
         
                <h6> Don't have an account? <a class="btn btn-link" href="index.php?content=register" role="button">Sign Up</a> </h6>
-        
+                
 
             
 
