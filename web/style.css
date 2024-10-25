@@ -1,16 +1,17 @@
 .post{
         margin: auto;
-        width: 50%;
-        border-color:goldenrod ;
-        border-style:dashed;
+        width: 60%;
+        border-color:black ;
+        
         border-width: 2px;
         margin-top:30px;
         margin-bottom:30px;
         
         padding: 10px;
-        background-color: antiquewhite;
+        background-color: white;
         border-radius: 5px;
-        box-shadow: 0 0 15px goldenrod;
+        box-shadow: 0 0 5px black;
+        position: relative;
 
 }
 
@@ -47,7 +48,7 @@
     margin-right:5px;
 }
 .page {
-background-color: bisque;
+background-color: white;
 }
 .logInButton{
     color: black;
@@ -69,6 +70,7 @@ background-color: bisque;
     text-align:center;
     margin-left:auto;
     margin-right:auto;
+    margin-top:5%;
     border-radius:25px;
 }
 .buttons{
@@ -99,25 +101,41 @@ margin-bottom:30px;
     margin-left:535px;
    margin-bottom:25px;
     text-align:center;
-    border-style:dashed;
+    display:none;
+    border-style:solid;
     width:25%;
     border-radius:25px;
+    background-color:white;
+    box-shadow: 0 0 15px black;
+
 }
 .followedBy{
+    margin-bottom:25px;
     margin-left:535px;
-    border-style:dashed;
-    
+    border-style:solid;
+    display:none;
     text-align:center;
     width:25%;
     border-radius:25px;
+    background-color:white;
+    box-shadow: 0 0 15px black;
 }
-.names{
+
+.followedByNames{
     text-align:center;
+    display:none;
+}
+
+.followingNames{
+    margin-top:20px;
+    text-align:center;
+    display:none;
 }
 .post-img{
     border-radius:25px;
-    width:95%;
-    margin:10px;
+    width:100%;
+    
+    
 }
 .LogInButton{
     color:black;
@@ -127,14 +145,8 @@ margin-bottom:30px;
 .yourProfile{
     text-align: center;
 }
-.userProfilePic{
-    border-style: solid;
-    border-radius:25px;
-}
-.signOutProfile{
-    text-align:center;
-    margin-top:20px;
-}
+
+
 .createProfilePic{
 
     margin-top:20px;
@@ -145,3 +157,404 @@ margin-bottom:30px;
 .createProfileBio{
     text-align:center;
 }
+
+
+.threeDots {
+    /* position: absolute; /* Position absolutely within the parent */
+    /* bottom: 10px; Adjust the distance from the bottom */
+    /* right: 10px;   */
+    margin:auto;
+    border: none; /* Remove any border */
+    outline: none; /* Remove any outline */
+    display: block; /* Make sure it behaves like a block element */
+    background: transparent; /* Ensure the background is transparent */
+}
+.threeDotsImg{
+
+    
+    width:25px;
+}
+
+
+
+.first-cancel-button{
+    border:black;
+    border-radius:10px;
+    margin-left:10px;
+}
+
+.comment-button{
+    border:black;
+    border-radius:10px;
+
+    
+}
+.text-area-styles{
+    border:black;
+    border-width: 2px;
+    border-style:solid;
+    border-radius:10px;
+    resize: none;
+    width:90%;
+}
+
+
+.submit-button{
+    background-color: transparent;
+    
+    border-style:none;
+    
+}
+
+.home-logo{
+    margin-left:25px;
+}
+.nav-item1{
+    margin-top:2%;
+    margin-left:500px;
+}
+
+.nav-item2{
+    margin-top:2%;
+    margin-left:20px;
+}
+
+.comment-thing{
+    width:100%;
+    
+}
+.like{
+    width:100%;
+    margin:auto;
+   
+}
+
+.likeButton{
+    width:100%;
+    border: none; /* Remove any border */
+    outline: none;
+    display: block; /* Make sure it behaves like a block element */
+    background: transparent; 
+    margin:auto;
+   
+
+}
+.commentButton{
+    border: none; /* Remove any border */
+    outline: none;
+    display: block; /* Make sure it behaves like a block element */
+    background: transparent; 
+    margin:auto;
+    width:85%;
+    
+}
+.commentList{
+    display: none;
+    width:90%;
+    border-style:solid;
+    border-radius:15px;
+    border-color:black;
+    /* margin-left: 5%; */
+
+    max-height: 200px; /* Set desired height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin-top:-15;
+    /* background-color: grey; */
+}
+
+
+.postImg{
+    width:100%;
+}
+
+.comment{
+    margin-left:5%;
+    margin-top:5%;
+}
+.commentText{
+
+}
+.sendButton{
+    position: absolute; /* Position absolutely within the parent */
+    bottom:3%; /* Adjust the distance from the bottom */
+    /* left:80% ;  */
+    width:45px;
+    
+}
+
+.comment-box{
+    display: none;
+
+}
+
+.liked{
+    width:100%;
+    /* position: absolute; /* Position absolutely within the parent */
+     /* Adjust the distance from the bottom */
+    
+    border: none; /* Remove any border */
+    outline: none; /* Remove any outline */
+     /* Make sure it behaves like a block element */
+    background: transparent;
+    margin:auto;
+
+
+}
+.bigPostDiv{
+    border-style:solid;
+    border-color:black;
+    width:50%;
+    margin:auto;
+    margin-top:5%;
+    border-radius:15px;
+    background-color:white;
+}
+
+.postButtons{
+    /* border-style:solid;
+    border-color:black;  */
+     width:7%;
+    margin-left:93%;
+    margin-top:-5%; 
+
+
+}
+
+.captionDiv{
+    /* border-style:solid;
+    border-color:black; */
+    width:85%;
+}
+.commentContainer{
+    margin-right:30%;
+    
+}
+.randomButton{
+    border: none; /* Remove any border */
+    outline: none; /* Remove any outline */
+    display: none; /* Make sure it behaves like a block element */
+    background: transparent;
+}
+
+.followedByButton{
+    background-color: blue; /* Green */
+    border: none;
+    color: white;
+    border-radius:15px;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-left:5px;
+    margin-right:5px;
+
+}
+
+.followingButton{
+    background-color: blue; /* Green */
+    border: none;
+    color: white;
+    border-radius:15px;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-left:5px;
+    margin-right:5px;
+
+}
+
+.bigFollowingDiv{
+    margin:auto;
+    border-style:solid;
+    border-color:black;
+    display:none;
+    width:30%;
+    margin-bottom:50px;
+    max-height: 200px; /* Set desired height */
+    overflow-y: auto;
+    min-height:200px;
+    background-color:white;
+    border-radius:15px;
+    box-shadow: 0 0 15px black;
+}
+
+.bigFollowedByDiv{
+    margin:auto;
+    border-style:solid;
+    border-color:black;
+    display:none;
+    width:30%;
+    margin-bottom:50px;
+    max-height: 200px; /* Set desired height */
+    overflow-y: auto;
+    box-shadow: 0 0 15px black;
+    min-height:200px;
+    background-color:white;
+    border-radius:15px
+}
+.followingButtons{
+    margin:auto;
+    width:24%;
+    margin-top:20px;
+    
+}
+
+.userProfile{
+    border-style:solid;
+    border-radius:15px;
+    border-color:black;
+    width:50%;
+    max-height:600px;
+    min-height:400px;
+    margin:auto;
+    background-color: white;
+    box-shadow: 0 0 15px black;
+    /* border-width:1px; */
+
+}
+.userProfilePic{
+    border-style: solid;
+    border-radius:50%;
+    width:35%;
+    margin-top:5%;
+}
+.bioText{
+    border-style: solid;
+    border-radius:15px;
+    width:50%;
+    margin:auto;
+    margin-top:10px;
+    max-height:60px;
+    min-height:60px;
+    display:block;
+}
+
+.signOutProfile{
+    text-align:center;
+    margin-top:10px;
+    margin-left:78%;
+    width:30%;
+   
+
+}
+
+.signOutButton{
+    background-color: blue; /* Green */
+    border: none;
+    color: white;
+    border-radius:15px;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-left:5px;
+    margin-right:5px;
+}
+
+.followingName{
+    margin-bottom:20px;
+    margin-top:5px;
+}
+.editProfile{
+    display:none;
+}
+
+.peopleList{
+    border-style:solid;
+    width:35%;
+    border-radius:15px;
+    background-color:white;
+    margin:auto;
+    display:block;
+    margin-top:30px;
+    margin-bottom:30px;
+
+    max-height: 800px; /* Set desired height */
+    overflow-y: auto;
+    box-shadow: 0 0 5px black;
+    min-height:200px;
+}
+
+#follow{
+    margin-left:100px;
+}
+.person{
+    margin:auto;
+    width:100%;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left:20%;
+}
+.followButton{
+    background-color: blue; /* Green */
+    border: none;
+    color: white;
+    border-radius:15px;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-left:5px;
+    margin-right:5px;
+
+}
+
+#searchText{
+    background-color:white;
+    border-style:solid;
+    border-color:black;
+    border-radius:15px;
+    width:80%;
+    height:50px;
+    margin:auto;
+
+
+}
+.searchBar{
+    margin:auto;
+    width:40%;
+    margin-top:30px;
+}
+.search-button{
+    background-color: blue; /* Green */
+    border: none;
+    color: white;
+    border-radius:15px;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-left:5px;
+    margin-right:5px;
+    width:15%;
+    height:50px;
+
+  
+}
+.resultDiv{
+    border-style:solid;
+    width:35%;
+    border-radius:15px;
+    background-color:white;
+    margin:auto;
+    display:block;
+    margin-top:30px;
+    margin-bottom:30px;
+
+    max-height: 800px; /* Set desired height */
+    overflow-y: auto;
+    box-shadow: 0 0 5px black;
+    min-height:200px;
+}
+.results{
+    display:none;
+}
+/* .commentContainer{
+    width:40%;
+} */

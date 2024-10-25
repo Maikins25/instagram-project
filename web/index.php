@@ -27,25 +27,31 @@ include('library.php');
 
         <title>Instagraham</title>
     </head>
-
+<!-- style=" background-image: url('images/madeBackground.png' -->
     <body>
         
         <!-- Navigation -->
         <div>
             <nav class="navbar navbar-expand-lg bg-dark-subtle">
                 
-                <a class="navbar-brand" href="index.php">Instagraham</a>
                 <div class="collapse navbar-collapse" id="navbarText">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         
-                            
-                            <li class="nav-item">
+                        
+                        
+                            <li class="nav-item1">
                                 <a class="nav-link <?php print($content == 'post' ? 'active' : ''); ?>" href="index.php?content=post">Make A Post</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link <?php print($content == 'following' ? 'active' : ''); ?>" href="index.php?content=following">Follow Your Friends</a>
+                            <li>
+                                <a class="home-logo" href="index.php">
+                                    <img width="150" src="images/hhsLogo.png"></img>
+                                </a>
                             </li>
+                            <li class="nav-item2">
+                                    <a class="nav-link <?php print($content == 'following' ? 'active' : ''); ?>" href="index.php?content=following">Follow Your Friends</a>
+                            </li>
+
+                        
 
 
                         </ul>

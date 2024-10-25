@@ -1,0 +1,13 @@
+Make only hanoverschools emails allowed
+chat rooms for classes
+Direct messages
+
+make profiles look better
+
+make follow friends page look better
+
+make users be able to have private accounts
+
+search algorithm for following users
+
+relevent posts when u look up a username

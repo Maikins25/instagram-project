@@ -8,19 +8,12 @@ $conn = get_database_connection();
 $image_path = "profilePics/";
 
 
-
+//Profile Pics
 $sql = <<<SQL
     select *
     from users
     where user_id = $user
-   
-  
 SQL;
-
-
-
-
-
 
 $result = mysqli_query($conn, $sql);
 
@@ -40,7 +33,7 @@ while($row = $result->fetch_assoc()){
 
 
 
-
+//gets who your following
 $sql = <<<SQL
    select follow_followed_user_id, user_username
     from users
@@ -63,7 +56,7 @@ while($row = $result->fetch_assoc()){
 
 
 
-
+// gets who you followed
 $sql = <<<SQL
    select follow_user_id, user_username
     from users

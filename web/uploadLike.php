@@ -6,7 +6,7 @@ if('$crumb' <> ''){
     $conn = get_database_connection();
     
     $sql = <<<SQL
-        INSERT INTO comments(comment_post_id, comment_words, comment_commenter) VALUES ($id, '$crumb', $user)
+        INSERT INTO likes(like_user_id, like_post_id) VALUES ($user, $postId)
     
     SQL;
     
@@ -17,5 +17,7 @@ if('$crumb' <> ''){
     
     $conn->close();
     header('Location: index.php?content=feed');   
+    
+}else{
     
 }

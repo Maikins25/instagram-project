@@ -24,11 +24,11 @@ $dbh = get_database_connection();
 ?>
 
 
-
+<div class="bigPostDiv">
 <form action="save.php" method="POST" enctype='multipart/form-data'>
     <div class="imageDiv">
     <img id="preview" class="post-img" />
-</div>
+    </div>
 <div class="imageSelector">
   <label for="image">Select an image:</label>
   <input type="file" placeholder="Upload Image" name="image" id="fileToUpload" onchange="loadFile(event)">
@@ -67,4 +67,6 @@ if (isset($id))
 <div class="center">
     </div>
 </form>
+
+</div>
 
