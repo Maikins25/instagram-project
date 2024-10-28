@@ -19,6 +19,8 @@ function toggleComments(event, postId) {
     }
 }
 
+
+
 function showOptions(event) {
     const postDiv = event.target.closest('.post');
     const optionsDiv = postDiv.querySelector('.comment-options');
@@ -34,15 +36,21 @@ function showOptions(event) {
     }
 }
 
+
+
 function showCommentList(postDiv) {
     const commentListDiv = postDiv.querySelector('.commentList');
     commentListDiv.style.display = 'block';
 }
 
+
+
 function showCommentBox(postDiv) {
     const commentBoxDiv = postDiv.querySelector('.comment-box');
     commentBoxDiv.style.display = 'block';
 }
+
+
 
 function hideCommentBox(postDiv) {
     const commentBoxDiv = postDiv.querySelector('.comment-box');
@@ -179,7 +187,7 @@ while ($row = $result->fetch_assoc())
             echo '</div>';
             
         }
-        
+
         echo '</div>';
 
         echo '<div class="post" id="' . $row['post_id'] .'">';
@@ -252,7 +260,7 @@ while ($row = $result->fetch_assoc())
             echo '<div class="comment-box" >'; // Hide initially
             echo'<br>';
             echo '<div class="realTextArea">';
-            echo '<textarea id="commentInput' . $row['post_id'] . '" class="text-area-styles" placeholder="Write your comment..."></textarea>';
+            echo '<textarea id="commentInput' . $row['post_id'] . '" class="feed-text-area-styles" placeholder="Write your comment..."></textarea>';
             echo '<button class="submit-button" onclick="submitComment(' . $row['post_id'] . ')"><img class="sendButton" src="images/send.png"></button>';
             echo '</div>'; // Close realTextArea div
             echo '</div>'; // Close comment-box div

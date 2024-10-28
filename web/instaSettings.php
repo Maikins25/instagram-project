@@ -606,10 +606,10 @@ while ($row = $result->fetch_assoc())
 
             echo '<div class="comment-box" >'; // Hide initially
             echo'<br>';
-            echo '<div class="realTextArea">';
+            // echo '<div class="realTextArea">';
             echo '<textarea id="commentInput' . $row['post_id'] . '" class="text-area-styles" placeholder="Write your comment..."></textarea>';
             echo '<button class="submit-button" onclick="submitComment(' . $row['post_id'] . ')"><img class="sendButton" src="images/send.png"></button>';
-            echo '</div>'; // Close realTextArea div
+            // echo '</div>'; // Close realTextArea div
             echo '</div>'; // Close comment-box div
         
         echo '</div>';

@@ -196,6 +196,8 @@ margin-bottom:30px;
     border-radius:10px;
     resize: none;
     width:90%;
+    margin-left:-7%;
+    
 }
 
 
@@ -259,6 +261,7 @@ margin-bottom:30px;
     max-height: 200px; /* Set desired height */
     overflow-y: auto; /* Enable vertical scrolling */
     margin-top:-15;
+    
     /* background-color: grey; */
 }
 
@@ -270,6 +273,7 @@ margin-bottom:30px;
 .comment{
     margin-left:5%;
     margin-top:5%;
+    text-align:left;
 }
 .commentText{
 
@@ -323,6 +327,7 @@ margin-bottom:30px;
 .captionDiv{
     /* border-style:solid;
     border-color:black; */
+    text-align:left;
     width:85%;
 }
 .commentContainer{
@@ -558,3 +563,14 @@ margin-bottom:30px;
 /* .commentContainer{
     width:40%;
 } */
+
+.feed-text-area-styles{
+    border:black;
+    border-width: 2px;
+    border-style:solid;
+    border-radius:10px;
+    resize: none;
+    width:90%;
+    
+    
+}
