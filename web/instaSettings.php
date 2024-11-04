@@ -18,6 +18,10 @@ function deletePost(postId) {
     }
 }
 
+function directMessages() {
+    location.href = 'directMessages.php';
+}
+
 
 function toggleComments(event, postId) {
     const postDiv = event.target.closest('.post');
@@ -310,6 +314,8 @@ while($row = $result->fetch_assoc()){
 
     
     echo '<button class="signOutButton" onclick="editProfile()">Edit Profile</button>';
+    echo '<a href="index.php?content=directMessages" class="signOutButton">Direct Messages</a>';
+
     echo '</div>';
 
     echo '<div class="yourProfile">';

@@ -440,7 +440,7 @@ margin-bottom:30px;
 .signOutProfile{
     text-align:center;
     margin-top:10px;
-    margin-left:78%;
+    margin-left:70%;
     width:30%;
    
 
@@ -506,6 +506,8 @@ margin-bottom:30px;
     font-size: 12px;
     margin-left:5px;
     margin-right:5px;
+    margin-left: auto; 
+    margin-right: 0;
 
 }
 
@@ -573,4 +575,75 @@ margin-bottom:30px;
     width:90%;
     
     
+}
+
+
+/* .leftFriends{
+    border-color:black;
+    max-height:100%;
+    width:30%;
+    border-style:solid;
+    border: none;               Removes all borders 
+     Adjust thickness and color as needed 
+    min-height:100%;
+} */
+
+
+
+
+.leftFriends{
+    position:absolute;       /* Fixes it to the left side */
+    left: 0;
+    top: 100px;
+    height: 100vh;         /* Full viewport height */
+    width: 25%;            /* Adjust width as needed */
+    background-color: #f4f4f4;
+    border-right: 1px solid black; /* Background color for the left side */
+}
+
+.right-side{
+    margin-left: 25%;      /* Matches the width of the left-side div */
+    height: 100vh;
+    background-color: #ffffff; /* Background color for the right side */
+    overflow: auto;    
+        /* Allows scrolling if content overflows */
+}
+
+
+.message-text-area-styles{
+    border:black;
+    /* margin-top:50%; */
+    border-width: 2px;
+    border-style:solid;
+    border-radius:10px;
+    resize: none;
+    width:50%;
+}
+
+.dm-submit-button{
+    background-color: transparent;
+    
+    border-style:none;
+}
+.messageSendButton{
+    /* position: absolute; Position absolutely within the parent */
+    /* bottom:3%; Adjust the distance from the bottom */
+    /* left:80% ;  */
+    width:45px;
+    margin-bottom: 80%;
+
+}
+
+.dmTextArea{
+    /* margin-top:20%; */
+    height:70px;
+    margin-left:15px;
+    margin-top:15px;
+}
+
+.conversation{
+    min-height:400px;
+    border-style:solid;
+    border-color:black;
+
 }
