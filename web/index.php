@@ -15,10 +15,14 @@ include('library.php');
 <!DOCTYPE html>
 <html>
     <head>
+
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="style.css?v=<?php echo rand();?>" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -27,12 +31,84 @@ include('library.php');
 
         <title>Instagraham</title>
     </head>
+
+
+<header class="header">
+    <h1 class="header_logo"><a href="index.php"><img class="header_img"  src="images/hhsLogo.png" alt="hhsLogo"></a></h1>
+
+    <nav class="header_nav">
+        <ul class="header_ul">
+                        
+                        
+                        
+            <li>
+                <a class="header_a" href="index.php?content=post">Make A Post</a>
+            </li>
+            
+            <li>
+                <a class="header_a" href="index.php?content=following">Follow Your Friends</a>
+            </li>
+            
+            <?php
+                         
+                       if(isset($_SESSION['userId'])){
+                      
+                           $sql = <<<SQL
+                           select user_username
+                           from users
+                           where user_id = $user
+                           
+                           
+                           SQL;
+                           
+                           $conn = get_database_connection();
+                           
+                           $result = mysqli_query($conn, $sql);
+                           $image_path = "profilePics/";
+                           
+                           while ($row = $result->fetch_assoc())
+                           {
+                                         
+                                echo'<li>';
+                                echo '<a class="header_a" href="index.php?content=settings">Account</a>';
+                                echo'</li>';
+                                  
+                           }
+
+                       }else{
+                        echo '<div class="LogInDiv">';
+                        echo '<a class="header_a" href = "index.php?content=Login">Log In</a>';
+                        echo '</div>';
+
+                        echo '<div class="LogInDiv">';
+                        echo '<a class="header_a" href = "index.php?content=Register">Sign Up</a>';
+                        echo '</div>';
+                        
+                       
+                       }
+                        
+                        ?>
+
+
+                    
+
+
+        </ul>
+
+
+    </nav>
+
+
+
+
+</header>
+
 <!-- style=" background-image: url('images/madeBackground.png' -->
-    <body>
+    <body id="body">
         
         <!-- Navigation -->
         <div>
-            <nav class="navbar navbar-expand-lg bg-dark-subtle">
+            <!-- <nav class="navbar navbar-expand-lg bg-dark-subtle">
                 
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -101,7 +177,7 @@ include('library.php');
                         ?>
                        
                 </div>
-            </nav>
+            </nav> -->
         </div>
 
         <!-- Main Content -->

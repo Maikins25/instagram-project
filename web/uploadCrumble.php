@@ -19,3 +19,4 @@ if('$crumb' <> ''){
     header('Location: index.php?content=feed');   
     
 }
+

@@ -13,15 +13,17 @@ $password = mysqli_real_escape_string($dbh, $password);
 $sql = <<<SQL
 SELECT user_username, user_password,user_id
 FROM users
-WHERE user_username = '{$username}'
-AND user_password = '{$password}'
-AND user_email = '{$email}'
+WHERE user_username = '$username'
+AND user_password = '$password'
+AND user_email = '$email'
 SQL;
 
 $result = mysqli_query($dbh, $sql);
 
 $count = mysqli_num_rows($result);
-if ($count == 1)
+echo $count;
+
+if ($count > 0)
 {
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
@@ -37,5 +39,7 @@ if ($count == 1)
 }
 else
 {
+    echo'<h1>in else statement</h1>';
+
     header('Location: index.php?content=login');
 }

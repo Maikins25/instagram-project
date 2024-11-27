@@ -321,7 +321,7 @@ while($row = $result->fetch_assoc()){
     echo '<div class="yourProfile">';
 
 
-        echo '<h1>Your profile</h1>';
+        echo '<h1 style="margin-top:20px";>Your profile</h1>';
 
         echo'<div class="userProfile">';
 
@@ -389,6 +389,9 @@ echo'<div class="followingButtons">';
 
     echo'<button onclick="toggleFollowedBy()" class="followedByButton"> Followed By </button>';
 echo'</div>';
+
+echo '<h1 style="margin-top:50px;">Your Posts</h1>';
+
 
 
 
@@ -530,7 +533,6 @@ while ($row = $result->fetch_assoc())
             
         }
         
-        
         echo '</div>';
         echo '<div class="post" id="' . $row['post_id'] .'">';
         echo '<h5>@' . $row['postUser'] . '</h5>';
@@ -582,6 +584,8 @@ while ($row = $result->fetch_assoc())
 
 //Comment Container that is displayed when you click comment button
         if (isset($comments[$row['post_id']])) {
+
+            
 
 
             echo '<div class="commentContainer">'; // Parent container
@@ -635,7 +639,17 @@ while ($row = $result->fetch_assoc())
 
 echo '</div>';
 }else{
-    echo'<h1>Log In/ Sign Up to view this page</h1>';
+    echo'<div class="notLoggedIn">';
+    echo'<h1>Not Logged In</h1>';
+    
+    echo'<h3>You can not view content on this page. </h3>';
+    echo'<h3>Please <a class="signUp" href="index.php?content=Register"> Log In </a>';
+    echo'If you have an account, or ';
+    echo'<a class="signUp" href="index.php?content=Register"> Sign Up</a> if you dont have one.</h3>';
+    
+    
+    echo'</div>';
+  
 }
 
 
@@ -673,7 +687,17 @@ echo '</div>';
 
 
 }else{
-    echo '<h1>Log In or Sign Up to See Your Profile</h1>';
+    echo'<div class="notLoggedIn">';
+    echo'<h1>Not Logged In</h1>';
+    
+    echo'<h3>You can not view content on this page. </h3>';
+    echo'<h3>Please <a class="signUp" href="index.php?content=Login"> Log In </a>';
+    echo'If you have an account, or ';
+    echo'<a class="signUp" href="index.php?content=Register"> Sign Up</a> if you dont have one.</h3>';
+    
+    
+    echo'</div>';
+  
 }
 
 

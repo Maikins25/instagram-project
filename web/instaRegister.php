@@ -4,21 +4,16 @@ function profile(){
 }
 </script> 
 
-<div class="text">
-    <h2>Welcome to Instagraham</h2>
-</div>
 
-<div class="center">
-    <p>
-        Sign up to instagraham to see what your friends are up to!
-    </p>
-</div>
 
 
 
 
 <div class="center">
         <form class="form-horizontal" action="register.php">
+
+            <h1 style="text-align:center'">Sign Up</h1>
+
             <div class="col-xs-12" ></div>
             <div class="form-group">
                 <label class="col-sm-3 control-label" for="email">&nbsp;</label>

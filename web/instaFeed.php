@@ -7,16 +7,18 @@ function isElementVisible(element) {
 function toggleComments(event, postId) {
     const postDiv = event.target.closest('.post');
     const commentListDiv = postDiv.querySelector('.commentList');
-
+    
     if (isElementVisible(commentListDiv)) {
         hideCommentButton(postId);
         hideCommentBox(postDiv); 
         hideCommentList(postDiv);
+        console.log("In function");
     } else {
         showCommentButton(postId);
         showCommentBox(postDiv);
         showCommentList(postDiv);
     }
+
 }
 
 
@@ -282,7 +284,16 @@ while ($row = $result->fetch_assoc())
 
 echo '</div>';
 }else{
-    echo'<h1>Log In/ Sign Up to view this page</h1>';
+    echo'<div class="notLoggedIn">';
+        echo'<h1>Not Logged In</h1>';
+
+        echo'<h3>You can not view content on this page. </h3>';
+        echo'<h3>Please <a class="signUp" href="index.php?content=Login"> Log In </a>';
+        echo'If you have an account, or ';
+        echo'<a class="signUp" href="index.php?content=Register"> Sign Up</a> if you dont have one.</h3>';
+
+
+    echo'</div>';
 }
 
 ?>

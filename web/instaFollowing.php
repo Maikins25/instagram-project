@@ -82,7 +82,7 @@ function follow(userId){
     console.log(settings);
     $.ajax(settings).done(function(response) {
         // window.location.replace('index.php?content=Feed');
-        $('#follow' + userId).html('following');
+        $('#follow' + userId).html('Following');
         
     }).fail(function() {
         alert('didnt work');
@@ -135,14 +135,18 @@ echo '<div id="results" class="search-results"></div>';
             
 
             // echo'<div class="followButton">';
-            echo '</a><button class="followButton" id="follow' ;
-            echo  $row['user_id'] ;
-            echo '" onclick="follow(' . $row['user_id'] . ')"> ';
+           
 
             if(isset ($row['follow_id'])){
+
+                echo '</a><button class="followButton" id="follow' . $row['user_id'] . '">' ;
+                
                 echo 'Following';
     
             }else{
+                echo '</a><button class="followButton" id="follow' ;
+                echo  $row['user_id'] ;
+                echo '" onclick="follow(' . $row['user_id'] . ')"> ';
                 echo 'Follow';
             }
             echo '</button>';
@@ -161,8 +165,18 @@ echo '<div id="results" class="search-results"></div>';
     echo'</div>';
 
 }else{
-    echo '<h1>Log in or Sign up to See Your Friends</h1>';
+    echo'<div class="notLoggedIn">';
+    echo'<h1>Not Logged In</h1>';
+    
+    echo'<h3>You can not view content on this page. </h3>';
+    echo'<h3>Please <a class="signUp" href="index.php?content=Login"> Log In </a>';
+    echo'If you have an account, or ';
+    echo'<a class="signUp" href="index.php?content=Register"> Sign Up</a> if you dont have one.</h3>';
+    
+    
+    echo'</div>';
 }
+
 
 
 
