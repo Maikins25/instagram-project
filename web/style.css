@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 .post{
         margin: auto;
         width: 60%;
@@ -429,7 +431,7 @@ margin-bottom:30px;
     border-style: solid;
     border-radius:50%;
     width:35%;
-    margin-top:5%;
+    margin-top:2%;
 }
 .bioText{
     border-style: solid;
@@ -735,16 +737,18 @@ margin-bottom:30px;
 
 body {
     overflow: block;
-    background:linear-gradient(to left bottom, hsl(215, 16%, 46%), hsl(54, 96%, 88%));
+    /* background:linear-gradient(to left bottom, hsl(215, 16%, 46%), hsl(54, 96%, 88%)); */
+
     min-block-size: 100vb;
     font-family:sans-serif;
     font-size: 2rem;
     line-height:1.5;
     color:#ffffff;
+    background-size:cover;
 }
 
 .header{
-    margin-top:0.5rem;
+    margin-top:0.5rem; 
     justify-content: space-between;
     align-items: center;
     display:flex;
@@ -752,10 +756,10 @@ body {
     margin-right:auto;
     margin-left:auto;
     border-radius:0.5rem;
-    background-color:hsl(215 16% 5% / 20%);
+    background-color:rgba(0,0,0,.2);
     padding-block:1rem;
     padding-inline: 2rem;
-    width:fit-content;
+    width:70vw;
 
 }
 
@@ -1081,6 +1085,7 @@ body {
 
 form {
     max-width: 500px;
+    height:75vh;
     margin: 0 auto; /* Center the form */
     background-color: #f9f9f9; /* Light background */
     padding: 20px;
@@ -1122,22 +1127,7 @@ ul li input[type="checkbox"] {
 }
 
 /* Submit button */
-form button[type="submit"] {
-    width: 100%;
-    padding: 10px 15px;
-    background-color: #4CAF50; /* Green button */
-    color: white; /* White text */
-    border: none;
-    border-radius: 5px; /* Rounded corners */
-    font-size: 16px;
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-}
 
-/* Hover effect for submit button */
-form button[type="submit"]:hover {
-    background-color: #45a049; /* Darker green on hover */
-}
 
 
 .gcPeopleList{
@@ -1189,4 +1179,182 @@ form button[type="submit"]:hover {
     border-width:1px;
     border-color:black;
     border-style:solid;
+}
+
+.wrapper{
+    width:420px;
+    color:black;
+    margin-left:auto;
+    margin-right:auto;
+    /* background-color:purple; */
+
+
+}
+.loginForm{
+    margin-top:.5rem;
+    background-color: rgba(0, 0, 0, 0.15);
+    /* border-color:grey;
+    border-width:.5px;
+    border-style:solid; */
+    box-shadow: 0 0 3px grey;
+}
+
+
+
+.wrapper h1{
+    font-size:36px;
+    text-align:center;
+    /* margin:0; */
+    padding:0;
+    box-sizing:border-box;
+    color:white;
+    font-family: 'Poppins', sans-serif;
+    font-weight:600;
+    
+    
+}
+
+.wrapper .input-box{
+    position:relative;
+    width:100%;
+    height:50px;
+    
+    margin:20px 0;
+}
+/* 
+.input-box{
+    background:transparent;
+} */
+
+
+.input-box{
+    background:transparent;
+}
+
+.input-box input{
+    width:100%;
+    height:100%;
+    /* background:transparent; */
+    /* border:none; */
+
+    border:2px solid black;
+    border-radius:40px;
+    font-size:16px;
+    color:black;
+
+    padding: 20px 45px 20px 20px;
+}
+
+/* .input-boxinput input::placeholder{
+    color:#fff;
+} */
+
+.input-box i {
+    position:absolute;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:20px;
+}
+
+
+
+.wrapper .remember-forgot{
+    display:flex;
+    justify-content:space-between;
+    font-size:14.5px;
+    margin: -15px 0 15px;
+}
+
+.remember-forgot label input{
+    accent-color:blue;
+    margin-right:3px;
+    text-decoration:none;
+}
+
+.remember-forgot a{
+    color:white;
+    text-decoration: none;
+}
+
+.remember-forgot label{
+    color:white;
+    font-family: 'Poppins', sans-serif;
+    font-weight:600;
+    
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+.wrapper .logInButton{
+    width:100%;
+    height:45px;
+    background:white;
+    border:none;
+    outline:none;
+    border-radius:40px;
+    box-shadow: 0 0 10px , rgba(0,0,0,.1);
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    color:black;
+
+}
+
+
+.wrapper .register-link{
+    font-size:14.5px;
+    text-align:center;
+    margin-top:20px;
+}
+
+.register-link p a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+
+
+}
+
+
+.register-link p a:hover{
+    text-decoration:underline;
+}
+
+.badMessage{
+    font-size:15px;
+    text-align:center;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    color:red;
+    font-family: 'Poppins', sans-serif;
+    font-weight:600;
+}
+.goodMessage{
+    font-size:15px;
+    text-align:center;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    color:green;
+    font-family: 'Poppins', sans-serif;
+    font-weight:600;
+}
+
+.forgotWrapper{
+    width:420px;
+    height:fit-content;
+    color:black;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.forgotForm{
+    margin-top:.5rem;
+    background-color: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 3px grey;
+    height:fit-content;
 }

@@ -8,3 +8,14 @@ Direct messages
 make users be able to have private accounts
 
 relevent posts when u look up a username
+
+
+
+
+Make the posts have a scrolling feauture that locks to each post
+so that the body of the page isnt huge
+
+make remember me work
+
+make forget password page
+

@@ -265,27 +265,30 @@ if($row = $result->fetch_assoc()){
     
     // echo $row['user_profile_created'];
 
-        if($row['user_profile_created'] == 0){
-            echo '<div class="createProfilePic">';
-            echo '<form action="update.php" method="POST" enctype="multipart/form-data">';
-            echo '<label for="profilePicture">Select a Profile Picture:</label>';
-            echo '<input type="file" id="profilePicture" name="profilePicture">';
-            echo '</div>';
+        // if($row['user_profile_created'] == 0){
+        //     echo '<div class="createProfilePic">';
+        //     echo '<form action="update.php" method="POST" enctype="multipart/form-data">';
+        //     echo '<label for="profilePicture">Select a Profile Picture:</label>';
+        //     echo '<input type="file" id="profilePicture" name="profilePicture">';
+        //     echo '</div>';
             
-            echo '<br>';
-            echo '<div class="createProfileBio">';
-            echo '<label for="Bio">About you</label>';
-            echo '<input type="text" id="Bio" name="Bio">';
+        //     echo '<br>';
+        //     echo '<div class="createProfileBio">';
+        //     echo '<label for="Bio">About you</label>';
+        //     echo '<input type="text" id="Bio" name="Bio">';
             
             
             
-            echo '<button type="submit" class="btn btn-primary">Save</button>';
-            echo '</div>';
+        //     echo '<button type="submit" class="btn btn-primary">Save</button>';
+        //     echo '</div>';
             
-            echo '</form>';
+        //     echo '</form>';
             
-        }else{
+        // }else{
+if(isset($user)){
 
+
+        
             $image_path = "profilePics/";
 
 
@@ -324,6 +327,7 @@ while($row = $result->fetch_assoc()){
         echo '<h1 style="margin-top:20px";>Your profile</h1>';
 
         echo'<div class="userProfile">';
+        echo'<h2 style="font-size:20px;margin-top:20px;">@' . $row['user_username'] . '</h2>';
 
         echo '<img class="userProfilePic" src="' . $image_path . $user . '.png">';
     

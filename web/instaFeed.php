@@ -1,5 +1,10 @@
 
 <script>
+function changeBackground(){
+    const body = document.getElementById('body');
+    body.style.background = none;
+}
+
 function isElementVisible(element) {
     return element && element.offsetHeight > 0;
 }
@@ -132,6 +137,7 @@ function like(postId, event, isLiked) {
 
 
 <?php
+echo '<script>changeBackground()</script>';
 if(isset($user)){
 $conn = get_database_connection();
 

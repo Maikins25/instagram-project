@@ -120,6 +120,23 @@ function loadGroup(group) {
 });
 
 }
+document.addEventListener("DOMContentLoaded", function () {
+        const messageInput = document.getElementById("messageInput");
+
+        if (messageInput) {
+            // Listen for keydown events in the textarea
+            messageInput.addEventListener("keydown", function (event) {
+                if (event.key === "Enter" && !event.shiftKey) {
+                    event.preventDefault(); // Prevent a new line
+                    submitMessage(currentRecipientId); // Call your submitMessage function
+                }
+            });
+        } else {
+            console.error("Textarea with ID 'messageInput' not found.");
+        }
+    });
+
+
 
 function loadPeopleList(group){
     $.ajax({

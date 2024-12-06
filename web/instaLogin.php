@@ -1,5 +1,7 @@
 <?php
 
+
+$conn = get_database_connection();
 /*************************************************************************************************
  * login.php
  *
@@ -7,6 +9,48 @@
  *
  * Login page content. This page is intended to be included in index.php.
  *************************************************************************************************/
+// include('library.php');
+
+if(isset($register)){
+    $signedUp = $register;
+}else{
+    $signedUp = "none";
+}
+
+
+if(isset($loggedIn)){
+    $isLoggedIn = $loggedIn;
+}else{
+    $isLoggedIn = "none";
+}
+
+
+
+if (isset($_COOKIE['remember_me'])) {
+    $token = $_COOKIE['remember_me'];
+
+    // Verify the token in the database
+    $sql = "SELECT user_id FROM user_tokens WHERE token = '$token' AND expires_at > NOW()";
+    $result = $conn->query($sql);
+
+    while ($row = $result->fetch_assoc()) {
+
+        if(mysqli_num_rows($result) > 0){
+            session_start();
+        
+            $_SESSION['userId'] = $row['user_id'];
+            $_SESSION['authenticated'] = true;
+        
+            session_write_close();
+        
+            header('Location: index.php?content=feed');
+        }
+    
+    }
+
+
+}
+
 
 ?>
 
@@ -16,53 +60,71 @@
 
 
 
-<div class="center">
-        <form class="form-horizontal" action="authenticate.php">
 
 
-        <h1 style="text-align:center'">Log In</h1>
-            <div class="col-xs-12" ></div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="email">&nbsp;</label>
-                <div class="col-sm-9 text-center">
-                    <div class="g-signin2" data-theme="dark" data-width="300" data-longtitle="true" data-onsuccess="loginGoogleSso">
-                </div>
-            </div>
+
+<div class="wrapper">
+        <form class="loginForm" action="authenticate.php">
+            <h1 class="font">Login</h1>
 
 
-            <div class="col-xs-12" style="height:20px;"></div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="email">Username:</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" autofocus />
-                </div>
-            </div>
-            <div class="col-xs-12" style="height:20px;"></div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="email">Email:</label>
-                <div class="col-sm-9">
-                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" autofocus />
-                </div>
-            </div>
+
+            <?php
+                if($signedUp == "success"){
+                    echo'<h1 style="
+                    margin-top=40px;
+                    font-size:15px;
+                    color:green;
+                    ">Successfully signed up</h1>';
+                }else if($signedUp == "failed"){
+                    echo'<h1 style="
+                    margin-top=20px;
+                    font-size:15px;
+                    color:red;
+                    ">Sign up failed</h1>';
+                }
+
+                if($isLoggedIn == "failed"){
+                    echo'<h1 style="
+                    margin-top=20px;
+                    font-size:15px;
+                    color:red;
+                    ">Log In failed</h1>';
+                }
 
 
-            <div class="form-group">
-                <label class="col-sm-3 control-label" for="password">Password:</label>
-                <div class="col-sm-9">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
-                </div>
-            </div>
-
-
+            ?>
             
-                <br>
-                <input type="submit" id="loginButton" class="btn btn-primary btn-block" value="Log In" onclick="login()" />
-                <!-- <a class="btn btn-link btn-block" href="index.php?content=passwordRecovery">Forgot your password?</a> -->
-            
-
-
         
-               <h6> Don't have an account? <a class="btn btn-link" href="index.php?content=register" role="button">Sign Up</a> </h6>
+
+
+            <div class="input-box">
+                <input type="text" name="username" placeholder="Username or Email"  required />
+                <i class='bx bxs-user'></i>
+            </div>
+     
+
+
+            <div class="input-box">               
+                <input type="password"  id="password" name="password" placeholder="Password" required />
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+
+         
+            
+            
+            <div class="remember-forgot">
+                <label><input type="checkbox">Remember Me</label>
+                <a href="index.php?content=forgotPassword">Forgot Password?</a>
+            </div>
+
+            <button type="submit" id="loginButton" class="logInButton" value="Log In" onclick="login()">Login</button>
+            
+
+            <div class="register-link">
+                <p> Don't have an account? <a href="index.php?content=register">Sign Up</a></p>
+                
+            </div>
                 
 
             
