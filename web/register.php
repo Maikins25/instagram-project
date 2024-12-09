@@ -6,7 +6,6 @@ $conn = get_database_connection();
 
 
 
-
 $sql = <<<SQL
 INSERT INTO users (user_username, user_password, user_email) VALUES ('$register_username','$register_password', '$register_email')
 
@@ -18,7 +17,7 @@ try {
 
     $conn->query($sql);
     
-    header('Location: index.php?content=login&register=success');
+    header('Location: index.php?content=login&register=success&login=true');
     exit();
 } catch (mysqli_sql_exception $e) {
     echo $e;

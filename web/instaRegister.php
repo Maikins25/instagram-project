@@ -10,7 +10,7 @@ function profile(){
 
 
 <div class="wrapper">
-        <form class="loginForm" action="register.php">
+        <form class="loginForm" method="POST" action="register.php">
             <h1 class="font">Sign Up</h1>
 
             <?php
@@ -41,14 +41,14 @@ function profile(){
 
 
             <div class="input-box">
-                <input type="text" name="register_username" placeholder="Username or Email"  required />
+                <input type="text" name="register_username" placeholder="Username"  required />
                 <i class='bx bxs-user'></i>
             </div>
      
 
 
             <div class="input-box">               
-                <input type="password"  id="register_password" name="password" placeholder="Password" required />
+                <input type="password"  id="register_password" name="register_password" placeholder="Password" required />
                 <i class='bx bxs-lock-alt'></i>
             </div>
             
@@ -64,7 +64,7 @@ function profile(){
                 <a href="index.php?content=forgotPassword">Forgot Password?</a>
             </div>
 
-            <button type="submit" id="loginButton" class="logInButton" value="Log In" onclick="login()">Sign Up</button>
+            <button type="submit" id="loginButton" class="logInButton" value="Log In">Sign Up</button>
             
 
             <div class="register-link">

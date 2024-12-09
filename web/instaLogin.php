@@ -11,6 +11,12 @@ $conn = get_database_connection();
  *************************************************************************************************/
 // include('library.php');
 
+if(isset($login)){
+    $loginDo = $login;
+}else{
+    $loginDo = "false";
+}
+
 if(isset($register)){
     $signedUp = $register;
 }else{
@@ -26,7 +32,9 @@ if(isset($loggedIn)){
 
 
 
-if (isset($_COOKIE['remember_me'])) {
+
+if (isset($_COOKIE['remember_me']) && $loginDo == 'false'){
+
     $token = $_COOKIE['remember_me'];
 
     // Verify the token in the database
@@ -36,8 +44,7 @@ if (isset($_COOKIE['remember_me'])) {
     while ($row = $result->fetch_assoc()) {
 
         if(mysqli_num_rows($result) > 0){
-            session_start();
-        
+           
             $_SESSION['userId'] = $row['user_id'];
             $_SESSION['authenticated'] = true;
         
@@ -64,7 +71,7 @@ if (isset($_COOKIE['remember_me'])) {
 
 
 <div class="wrapper">
-        <form class="loginForm" action="authenticate.php">
+        <form class="loginForm" method="POST" action="authenticate.php">
             <h1 class="font">Login</h1>
 
 
@@ -114,7 +121,7 @@ if (isset($_COOKIE['remember_me'])) {
             
             
             <div class="remember-forgot">
-                <label><input type="checkbox">Remember Me</label>
+                <label><input name="remember" type="checkbox">Remember Me</label>
                 <a href="index.php?content=forgotPassword">Forgot Password?</a>
             </div>
 

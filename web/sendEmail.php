@@ -3,7 +3,6 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 include('library.php');
-
 require __DIR__ . '/../vendor/autoload.php';
 
 $conn = get_database_connection();
@@ -26,17 +25,28 @@ if (isset($userEmail) && !empty($userEmail)) {
         $token = bin2hex($randomBytes); // Convert to a hexadecimal token
         $expiresAt = date('Y-m-d H:i:s', strtotime('+30 days')); // Token expires in 30 days
 
-        // Fetch the user_id and insert the token into the database
+        // Fetch the user_id and handle token logic
         while ($row = mysqli_fetch_assoc($userResult)) {
             $userId = $row['user_id'];
 
-            $sql = <<<SQL
-                INSERT INTO user_tokens (user_id, token, expires_at) 
-                VALUES ($userId, '$token', '$expiresAt');
+            // Delete any existing tokens for the same user and type
+            $deleteSql = <<<SQL
+                DELETE FROM user_tokens
+                WHERE user_id = $userId AND token_type = 'reset';
             SQL;
 
-            // Check if the token insertion was successful
-            if (!mysqli_query($conn, $sql)) {
+            if (!mysqli_query($conn, $deleteSql)) {
+                header('Location: index.php?content=forgotPassword&status=error');
+                exit;
+            }
+
+            // Insert the new token into the database
+            $insertSql = <<<SQL
+                INSERT INTO user_tokens (user_id, token, expires_at, token_type) 
+                VALUES ($userId, '$token', '$expiresAt', 'reset');
+            SQL;
+
+            if (!mysqli_query($conn, $insertSql)) {
                 header('Location: index.php?content=forgotPassword&status=error');
                 exit;
             }
